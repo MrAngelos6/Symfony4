@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+    {% block body %}
+        {% set colors = ["blue","red"] %}
+        {% for i in 0..9 %}
+            <h1 style="color: {{ cycle(colors,i) }}">Hello {{ name|capitalize }}!</h1>
+        {% endfor %}
+{% endblock %}

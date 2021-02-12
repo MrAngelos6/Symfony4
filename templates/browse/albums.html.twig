@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ artist.name }}</h1>
+    <ul>
+        {% if artist.albums is empty %}
+            <li>Aucun album</li>
+        {% endif %}
+
+        {% for album in artist.albums %} {# ou albums #}
+        <a href="{{ path('tracks', {id: album.id}) }}">
+            <li>{{ album.name }}</li>
+        </a>
+        {%endfor %}
+    </ul>
+{% endblock %}
